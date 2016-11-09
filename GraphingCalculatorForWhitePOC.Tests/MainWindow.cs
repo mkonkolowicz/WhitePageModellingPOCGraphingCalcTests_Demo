@@ -33,7 +33,7 @@ namespace GraphingCalculatorForWhitePOC.Tests
             //7. Finally we run our test
         }
         
-        //8. Let's see what a failing test looks like
+        //9. Let's see what a failing test looks like
         [TestMethod]
         public void NotAppear()
         {
@@ -45,7 +45,7 @@ namespace GraphingCalculatorForWhitePOC.Tests
             Assert.IsFalse(IsVisible, $"We expected the window's visibility to be false but it was {IsVisible}");
         }
 
-        //9. Now let's see what a test with searching for an element looks like, we need to ensure the input for numbers is available!
+        //10. Now let's see what a test with searching for an element looks like, we need to ensure the input for numbers is available!
         [TestMethod]
         public void HaveNumberInputFieldAvailableForInput()
         {
@@ -53,11 +53,11 @@ namespace GraphingCalculatorForWhitePOC.Tests
             bool NumberInputAvailable;
             
             //Act
-            //10. Now we have to modify the model to expose the number input
+            //11. Now we have to modify the model to expose the number input
             NumberInputAvailable = _mainWindow.NumberInputVisibleAndEnabled;
 
             //Assert
-            //11. Final Assertion
+            //13. Final Assertion
             Assert.IsTrue(NumberInputAvailable, "The input to the caclulator's main screen is not available");
         }
 
@@ -76,13 +76,13 @@ namespace GraphingCalculatorForWhitePOC.Tests
         public MainWindowModel(Window mainWindow) : base(mainWindow)
         {
         }
-              
+        //7. Now we have to figure out how to get the element, including searching for the hook      
         private TextBox NumberInput => ParentWindow.Get<TextBox>("UIImmediate"); 
         
         //6. Now we have to expose the behaviour we need for the test
         public bool WindowVisible => ParentWindow.Visible;
 
-        //11. Now we have to add the NumberInputVisibleAndEnabled property to the model, while maintaining encapsulation of the model
+        //12. Now we have to add the NumberInputVisibleAndEnabled property to the model, while maintaining encapsulation of the model
         public bool NumberInputVisibleAndEnabled => NumberInput.Visible && NumberInput.Enabled; 
     }
 }
