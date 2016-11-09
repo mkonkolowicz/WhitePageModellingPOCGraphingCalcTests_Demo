@@ -71,17 +71,17 @@ namespace GraphingCalculatorForWhitePOC.Tests
     }
 
     //5. Now we have to write the model for the Main Window which we need to pass the main window to
-    public class MainWindowModel
+    public class MainWindowModel : TestHelper
     {
-        private Window Window { get; }
-        public MainWindowModel(Window mainWindow)
+        public MainWindowModel(Window mainWindow) : base(mainWindow)
         {
-            Window = mainWindow;
         }
-        private TextBox NumberInput => Window.Get<TextBox>("UIImmediate"); 
+              
+        private TextBox NumberInput => ParentWindow.Get<TextBox>("UIImmediate"); 
         
         //6. Now we have to expose the behaviour we need for the test
-        public bool WindowVisible => Window.Visible;
+        public bool WindowVisible => ParentWindow.Visible;
+
         //11. Now we have to add the NumberInputVisibleAndEnabled property to the model, while maintaining encapsulation of the model
         public bool NumberInputVisibleAndEnabled => NumberInput.Visible && NumberInput.Enabled; 
     }

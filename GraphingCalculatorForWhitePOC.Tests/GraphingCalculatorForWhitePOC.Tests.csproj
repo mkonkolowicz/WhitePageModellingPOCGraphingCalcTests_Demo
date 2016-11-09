@@ -58,8 +58,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MainWindowShould.cs" />
+    <Compile Include="MainWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
