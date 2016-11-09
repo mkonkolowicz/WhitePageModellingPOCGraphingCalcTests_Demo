@@ -443,7 +443,8 @@
                 TextBlock.TextAlignment="Right"
                 Margin="5,0,5,0"
                 MaxLines="1"
-                Background="#ffeeeeee" />
+                Background="#ffeeeeee"
+                AutomationProperties.AutomationId="UIImmediate"/>
 
             <Grid Grid.Row="3" Grid.Column="1">
                 <Grid.Resources>
